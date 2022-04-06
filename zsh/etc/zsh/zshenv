@@ -1,0 +1,5 @@
+if [[ ! -o norcs ]]; then
+    [ -z "${ZDOTDIR}" ] && ZDOTDIR='/etc/zsh/zdotdir' && export ZDOTDIR
+    [ -z "${XDG_DATA_DIRS}" ] && XDG_DATA_DIRS='/usr/local/share/:/usr/share/' && export XDG_DATA_DIRS
+    [ -z "${XDG_CONFIG_DIRS}" ] && XDG_CONFIG_DIRS='/etc/xdg' && export XDG_CONFIG_DIRS
+fi

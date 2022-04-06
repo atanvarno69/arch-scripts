@@ -1,0 +1,7 @@
+# X11 configuration
+[ -z "${XAUTHORITY}" ] && XAUTHORITY="${XDG_RUNTIME_DIR}/xauthority" && export XAUTHORITY
+[ -z "${XINITRC}" ] && XINITRC="${XDG_CONFIG_HOME}/X11/xinitrc" && export XINITRC
+[ -z "${SERVERRC}" ] && XSERVERRC="${XDG_CONFIG_HOME}/X11/xserverrc" && export XSERVERRC
+
+# Start X11
+#[ -z "${DISPLAY}" ] && exec xinit -- :1

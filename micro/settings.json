@@ -1,0 +1,17 @@
+{
+    "colorcolumn": 120,
+    "colorscheme": "railscast",
+    "hlsearch": true,
+    "mkparents": true,
+    "parsecursor": true,
+    "rmtrailingws": true,
+    "savecursor": true,
+    "saveundo": true,
+    "scrollbar": true,
+    "softwrap": true,
+    "statusformatl": " $(filename):$(line):$(col) $(modified)",
+    "statusformatr": "$(opt:filetype) | $(opt:fileformat) | $(opt:encoding) ",
+    "tabmovement": true,
+    "tabstospaces": true,
+    "wordwrap": true
+}

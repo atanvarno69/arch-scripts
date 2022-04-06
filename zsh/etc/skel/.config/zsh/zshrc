@@ -1,0 +1,45 @@
+# Path
+typeset -U path
+[ -d "${HOME}/bin" ] && path=("${HOME}/bin" $path)
+[ -d "${HOME}/.local/bin" ] && path=("${HOME}/.local/bin" $path)
+
+# Function path
+typeset -U fpath
+[ -d "${HOME}/functions" ] && fpath=("${HOME}/functions" $fpath)
+[ -d "${HOME}/.local/functions" ] && fpath=("${HOME}/.local/functions" $fpath)
+
+# History
+setopt append_history inc_append_history share_history extended_history hist_ignore_dups hist_reduce_blanks
+setopt hist_ignore_space hist_no_store hist_no_functions
+HISTFILE="${XDG_DATA_HOME}/zsh/history"
+HISTSIZE=1000
+SAVEHIST=1000
+
+# Preferences
+setopt correct
+#EDITOR='micro' && export EDITOR
+#PAGER='bat' && export PAGER
+#MANPAGER="sh -c 'col -bx | bat -l man -p'" && export MANPAGER
+#MICRO_TRUECOLOR=1 && export MICRO_TRUECOLOR
+#VISUAL="${EDITOR}" && export VISUAL
+
+# Aliases
+[ -f "${XDG_CONFIG_HOME}/zsh/aliases" ] && source "${XDG_CONFIG_HOME}/zsh/aliases"
+
+# Prompt
+autoload -Uz promptinit; promptinit
+prompt simple --time
+
+# Autocompletions
+autoload -Uz compinit; compinit -d "${XDG_CACHE_HOME}/zsh/compdump"
+zstyle ':completion:*' menu select
+zstyle ':completion:*' rehash true
+zstyle ':completion::complete:*' gain-privileges 1
+
+# Syntax highlighting customization
+[ -f "${XDG_CONFIG_HOME}/zsh/highlighting" ] && source "${XDG_CONFIG_HOME}/zsh/highlighting"
+
+# Plugins
+[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f /usr/share/doc/pkgfile/command-not-found.zsh ] && source /usr/share/doc/pkgfile/command-not-found.zsh
+[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

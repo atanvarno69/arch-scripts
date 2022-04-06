@@ -1,0 +1,9 @@
+# Auto colors
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+# ls
+alias l='ls -A -B -F -L -v -T 4 --group-directories-first'
+alias ll='ls -A -B -F -h -L -l -v --time-style="+%y/%m/%d %H:%M" --group-directories-first'
+alias la='ls -a -h -l -v --time-style="+%y/%m/%d %H:%M:%S" --group-directories-first'
+alias list='ls -1 -A -L -v --group-directories-first'
